@@ -1,0 +1,40 @@
+-- pnpm run db:init   ue luego lo pierdo
+
+CREATE TABLE IF NOT EXISTS products (
+  id VARCHAR(64) PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  descripcion TEXT,
+  precio INT NOT NULL,
+  image VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS faqs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  pregunta VARCHAR(500) NOT NULL,
+  respuesta TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS valores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  descripcion TEXT
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+  id VARCHAR(36) PRIMARY KEY,
+  total INT NOT NULL,
+  estado VARCHAR(50) NOT NULL DEFAULT 'recibido',
+  cliente VARCHAR(255) NULL,
+  creado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS order_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  order_id VARCHAR(36) NOT NULL,
+  product_id VARCHAR(64) NOT NULL,
+  nombre VARCHAR(255) NOT NULL,
+  precio INT NOT NULL,
+  qty INT NOT NULL,
+  FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
+  FOREIGN KEY (product_id) REFERENCES products(id)
+);
