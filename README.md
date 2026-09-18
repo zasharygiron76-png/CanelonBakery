@@ -2,10 +2,13 @@
 
 # Terminal 1
 cd backend
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 
 # Terminal 2
 cd frontend
-npm install
-npm run dev
+pnpm install
+pnpm run dev
+
+
+pnpm run db:seed - Actualizar db
