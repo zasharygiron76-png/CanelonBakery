@@ -1,0 +1,131 @@
+.carousel-section {
+  background: var(--masa);
+}
+.carousel-shell {
+  position: relative;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--azucar);
+  border: 1px solid var(--linea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cafe);
+  box-shadow: 0 8px 20px rgba(58, 42, 30, 0.1);
+}
+.carousel-arrow:hover { background: var(--manteca); }
+.carousel-arrow.left { left: -8px; }
+.carousel-arrow.right { right: -8px; }
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 60px 12px 40px;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.product-card {
+  flex: 0 0 220px;
+  scroll-snap-align: center;
+  background: var(--azucar);
+  border-radius: 22px;
+  border: 1px solid var(--linea);
+  padding: 20px 18px 22px;
+  text-align: center;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease, z-index 0s;
+  transform: translateY(0) scale(0.92);
+  opacity: 0.72;
+  cursor: pointer;
+  position: relative;
+}
+.product-card .thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  background: var(--manteca);
+  margin-bottom: 16px;
+  background-size: cover;
+  background-position: center;
+}
+.product-card h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+.product-card p.desc {
+  font-size: 13px;
+  color: var(--cafe-suave);
+  margin: 0 0 14px;
+  min-height: 36px;
+}
+.product-card .precio {
+  font-weight: 800;
+  color: var(--canela);
+  margin-bottom: 14px;
+}
+.product-card .add-btn {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--manteca);
+  color: var(--cafe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.product-card.active {
+  transform: translateY(-26px) scale(1.14);
+  opacity: 1;
+  z-index: 3;
+  box-shadow: 0 30px 50px rgba(58, 42, 30, 0.22);
+  border-color: var(--miel);
+}
+.product-card.active .add-btn {
+  background: var(--miel);
+  color: var(--azucar);
+}
+.product-card.active .add-btn:hover {
+  background: var(--canela);
+}
+.product-card.added .add-btn {
+  background: var(--cafe);
+  color: var(--masa);
+}
+
+.menu-note {
+  margin-top: 12px;
+  background: var(--cafe);
+  border-radius: 20px;
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.menu-note p {
+  color: var(--masa);
+  margin: 0;
+  font-size: 15.5px;
+  max-width: 46ch;
+}
+
+@media (max-width: 600px) {
+  .product-card { flex-basis: 180px; }
+  .carousel-arrow { display: none; }
+}

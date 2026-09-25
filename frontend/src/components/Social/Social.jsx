@@ -1,48 +1,10 @@
 import React from "react";
 import { Instagram, Mail, MessageCircle, Clock, MapPin } from "lucide-react";
+import './Social.css';
 
 export default function Social() {
   return (
     <section id="redes" className="social-section">
-      <style>{`
-        .social-section { background: var(--cafe); }
-        .social-inner {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          align-items: start;
-        }
-        .social-inner .section-head h2 { color: var(--masa); }
-        .social-inner .section-head p { color: var(--manteca); opacity: 0.9; }
-        .social-inner .kicker { color: var(--miel); }
-        .social-cards { display: flex; flex-direction: column; gap: 12px; }
-        .social-card {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          background: #4a3626;
-          border-radius: 16px;
-          padding: 16px 20px;
-          transition: background 0.2s ease;
-        }
-        .social-card:hover { background: #5c4632; }
-        .social-card .icon-badge {
-          width: 42px;
-          height: 42px;
-          border-radius: 50%;
-          background: var(--miel);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--cafe);
-          flex-shrink: 0;
-        }
-        .social-card .label { font-size: 12.5px; color: var(--manteca); margin: 0 0 2px; }
-        .social-card .value { font-size: 15px; color: var(--masa); font-weight: 700; margin: 0; }
-        @media (max-width: 780px) {
-          .social-inner { grid-template-columns: 1fr; }
-        }
-      `}</style>
 
       <div className="wrap social-inner">
         <div>

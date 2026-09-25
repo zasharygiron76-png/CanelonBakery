@@ -1,10 +1,4 @@
-import React from "react";
-
-export default function Hero({ onSeeMenu, onOrder }) {
-  return (
-    <header id="inicio" className="hero">
-      <style>{`
-        .hero {
+.hero {
           position: relative;
           height: 100vh;
           min-height: 560px;
@@ -68,41 +62,3 @@ export default function Hero({ onSeeMenu, onOrder }) {
         .hero .btn-outline:hover {
           background: rgba(251, 243, 228, 0.12);
         }
-      `}</style>
-
-      {/*
-        Coloca tu video de marca en /public/video/hero.mp4 (y opcionalmente
-        una versión .webm). Si el video no carga, se ve el color de fondo
-        de respaldo definido en poster/--cafe.
-      */}
-      <video
-        className="hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/hero-poster.jpg"
-      >
-        <source src="/video/hero.mp4" type="video/mp4" />
-      </video>
-      <div className="hero-overlay" />
-
-      <div className="hero-content">
-        <div className="hero-eyebrow">Pastelería artesanal en Ciudad de Guatemala</div>
-        <h1>Horneamos felicidad en cada bocado</h1>
-        <p>
-          Postres y panes artesanales hechos con dedicación y un toque casero,
-          desde los favoritos de siempre hasta nuevas opciones para descubrir.
-        </p>
-        <div className="hero-ctas">
-          <button className="btn btn-primary" onClick={onSeeMenu}>
-            Ver el menú
-          </button>
-          <button className="btn btn-outline" onClick={onOrder}>
-            Hacer un pedido
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
